@@ -1,0 +1,27 @@
+#!/bin/bash
+
+######################################################
+#      Compiles and Tests the Self-Driving Taxi      #
+######################################################
+
+set -e    # halt on first error
+
+link=all  # link all binaries by default
+linked=no # track whether we linked
+
+case $1 in  
+  -nolink) link=none ; shift ;;  # don't link
+esac
+
+# use 'g++' as the compiler for debugging in ide50
+CPP=g++
+
+# be aggressive about warnings and errors
+FLAGS="-g -O -Wall -Wextra -Werror -Wfatal-errors -std=c++11 -pedantic"
+
+# clear out old object files
+rm -f *.o
+
+# compile
+
+$CPP $FLAGS car.cpp tests.cpp -o tests.o
