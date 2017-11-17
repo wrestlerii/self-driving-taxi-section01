@@ -71,11 +71,10 @@ bool Car::has_passengers()
     return false;
 }
 
-// Calculates distance between two points.
+//Calculates distance between two points.
 int Car::distance(double x1, double y1, double x2, double y2)
 {
-    int distance = sqrt(((x1 - x2)^2) + ((y1 - y2)^2))
-    return distance;
+    return x1;
 }
 
 Car &Car::go_home()
@@ -119,7 +118,14 @@ Car &Car::set_wipers(int level)
 }
 
 Car &Car::charge(int duration)
-{
+{ while (duration > 0) {
+  duration = duration - 1;
+  if (battery_level == 100){
+    break;
+  }
+  battery_level = battery_level + 10;
+
+}
     return *this;
 }
 
