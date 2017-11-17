@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 ######################################################
 #      Compiles and Tests the Self-Driving Taxi      #
 ######################################################
@@ -14,7 +15,7 @@ case $1 in
 esac
 
 # use 'g++' as the compiler for debugging in ide50
-CPP=g++
+CPP=clang++
 
 # be aggressive about warnings and errors
 FLAGS="-g -std=c++11 -pedantic"

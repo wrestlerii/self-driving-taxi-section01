@@ -28,7 +28,7 @@ Car &Car::pickup_request(std::vector<int> pickup_coords, std::vector<int> drop_c
 
 int Car::read_battery()
 {
-    return 0;
+    return battery_level;
 }
 
 int Car::read_speed()
@@ -63,18 +63,27 @@ bool Car::check_distance(std::vector<int> pickup, std::vector<int> dropoff)
 
 bool Car::is_home()
 {
+    if ((current_loc[0] == 0) && (current_loc[1] == 0)) return true;
     return false;
 }
 
 bool Car::has_passengers()
 {
-    return false;
+    if(num_passengers > 0)
+    	{
+	    return true;
+	}
+    else
+	{
+	    return false;
+	}
 }
 
 // Calculates distance between two points.
 int Car::distance(double x1, double y1, double x2, double y2)
 {
-    return 0;
+    int distance = sqrt(((x1 - x2)^2) + ((y1 - y2)^2))
+    return distance;
 }
 
 Car &Car::go_home()
@@ -104,11 +113,18 @@ Car &Car::turn_on()
 
 Car &Car::turn_off()
 {
+	if (on == false){
+	rpm = 0;
+	head_lights = false;
+	locked = true;
+	
+	}
     return *this;
 }
 
 Car &Car::lock()
 {
+    locked = true;
     return *this;
 }
 
