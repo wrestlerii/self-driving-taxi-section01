@@ -105,6 +105,7 @@ Car &Car::turn_off()
 
 Car &Car::lock()
 {
+    locked = true;
     return *this;
 }
 
