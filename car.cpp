@@ -61,12 +61,12 @@ bool Car::check_distance(std::vector<int> pickup, std::vector<int> dropoff)
     return true;
 }
 
-bool Car::is_home() 
+bool Car::is_home()
 {
     return false;
 }
 
-bool Car::has_passengers() 
+bool Car::has_passengers()
 {
     return false;
 }
@@ -94,6 +94,11 @@ Car &Car::arrive()
 
 Car &Car::turn_on()
 {
+    on = true;
+    rpm = 300;
+    head_lights = true;
+    interior_lights = true;
+    locked = false;
     return *this;
 }
 
