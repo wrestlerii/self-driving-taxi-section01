@@ -33,7 +33,11 @@ int Car::read_battery()
 
 int Car::read_speed()
 {
-    return -10;
+  if(speed != 0){
+    return speed;
+  }else{
+    return 0;
+  }
 }
 
 Car &Car::shift()
