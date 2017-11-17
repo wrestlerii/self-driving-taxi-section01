@@ -103,6 +103,11 @@ Car &Car::arrive()
 
 Car &Car::turn_on()
 {
+    on = true;
+    rpm = 300;
+    head_lights = true;
+    interior_lights = true;
+    locked = false;
     return *this;
 }
 
