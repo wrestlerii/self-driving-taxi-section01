@@ -100,6 +100,12 @@ Car &Car::turn_on()
 
 Car &Car::turn_off()
 {
+	if (on == false){
+	rpm = 0;
+	head_lights = false;
+	locked = true;
+	
+	}
     return *this;
 }
 
