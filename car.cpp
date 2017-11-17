@@ -68,7 +68,14 @@ bool Car::is_home()
 
 bool Car::has_passengers() 
 {
-    return false;
+    if(num_passengers > 0)
+    	{
+	    return true;
+	}
+    else
+	{
+	    return false;
+	}
 }
 
 // Calculates distance between two points.
