@@ -14,10 +14,10 @@ case $1 in
 esac
 
 # use 'g++' as the compiler for debugging in ide50
-CPP=g++
+CPP=clang++
 
 # be aggressive about warnings and errors
-FLAGS="-g -O -Wall -Wextra -Werror -Wfatal-errors -std=c++11 -pedantic"
+FLAGS="-g -O -Wall -Wextra -std=c++11 -pedantic"
 
 # clear out old object files
 rm -f *.o
