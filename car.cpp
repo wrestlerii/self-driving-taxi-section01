@@ -63,10 +63,11 @@ bool Car::check_distance(std::vector<int> pickup, std::vector<int> dropoff)
 
 bool Car::is_home() 
 {
+    if (current_loc == {0, 0}) return true;
     return false;
 }
 
-bool Car::has_passengers() 
+bool Car::has_passengers()
 {
     return false;
 }
