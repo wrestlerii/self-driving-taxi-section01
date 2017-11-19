@@ -1,4 +1,4 @@
-# Github Lab
+# Github Labz
 
 An introduction to large-scale collaboration using Github. 
 
